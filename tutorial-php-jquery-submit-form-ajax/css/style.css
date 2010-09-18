@@ -1,0 +1,46 @@
+/* 
+    Document   : style
+    Created on : 17/09/2010, 01:08:13 PM
+    Author     : JV Software
+    Description:
+        Estilo CSS para Tutorial 2 de JV Software.
+*/
+
+body {
+    background: #DFE5FF;
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 14px;
+}
+#form-area {
+    width: 300px;
+    overflow: hidden;
+    border: 1px solid #000000;
+    padding: 0px 20px 25px 20px;
+    margin: 50px auto auto 100px;
+    background: #FFFFFF;
+}
+#form-area dt, #form-area dd{
+    float: left;
+    margin: 5px auto;
+    padding: 0px 10px 0px 10px;
+}
+#form-area dt{
+    width: 90px;
+}
+#form-area .center{
+    padding-left: 80px;
+}
+#form-area .enviado{
+    border: 2px solid #9BBFB4;
+    background: #DFFFF5;
+    clear: both;
+    padding: 0px 10px 0px;
+}
+
+#form-area .enviado p {
+    height: 10px;
+    line-height: 10px;
+}
+
+
+
