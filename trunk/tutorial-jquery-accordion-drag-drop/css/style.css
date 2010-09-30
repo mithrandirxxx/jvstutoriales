@@ -1,0 +1,50 @@
+/* 
+    Document   : style
+    Created on : 29/09/2010, 11:11:35 AM
+    Author     : JV Software
+    Description:
+        Estilos general para Tutorial 3.
+*/
+
+body {
+    font-size: 12px;
+    font-family: Arial,Helvetica,sans-serif;
+    background: #EFF9FF;
+}
+
+#contenedor{
+    width: 600px;
+    margin: 10px auto;
+}
+
+#contenedor #acordeon {
+    width: 300px;
+    margin-right: 10px;
+    float: left;
+}
+
+#contenedor #cart {
+    width: 268px;
+    padding: 0px 10px 0px 10px;
+    float: left;
+    border: 1px solid #A6C9E2;
+    color: #415987;
+    background: #FCFDFD;
+}
+
+.drag, .eliminar {
+    font-size: 0.8em;
+    color: #ED890A;
+    visibility: hidden;
+}
+
+#acordeon li:hover{
+    cursor: move;
+}
+
+#acordeon li:hover span.drag, #cart ol li:hover a.eliminar {
+    visibility: visible;
+}
+
+
+
