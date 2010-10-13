@@ -1,0 +1,25 @@
+/* 
+    Document   : style
+    Created on : 06/10/2010, 04:11:22 PM
+    Author     : JV Software
+    Description:
+        Hoja de estilo para tutorial 4.
+*/
+
+body {
+    font-size: 14px;
+    font-family: Arial,Helvetica,sans-serif;
+    background: #EFF9FF;
+}
+
+#contenedor{
+    width: 600px;
+    margin: 10px auto;
+    border: 1px solid #D1DADF;
+    background: #ffffff;
+}
+
+#contenedor ul li{
+    list-style: none;
+    margin-bottom: 5px;
+}
