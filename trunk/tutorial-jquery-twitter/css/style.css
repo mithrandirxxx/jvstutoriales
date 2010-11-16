@@ -1,0 +1,43 @@
+/* 
+    Document   : style
+    Created on : 16/11/2010
+    Author     : JV Software
+    Description:
+        Hoja de estilo para tutorial 5.
+*/
+
+body {
+    font-size: 14px;
+    font-family: Arial,Helvetica,sans-serif;
+    background: #EFF9FF;
+}
+
+#tweets{
+     background: #FFF url('http://cdn.iconfinder.net/data/icons/flavour/twitter_standing.png') no-repeat bottom right;
+     overflow: hidden;
+     width: 490px;
+     margin: 20px auto auto 40px;
+     -moz-box-shadow: 0px 5px 15px #cccccc;
+    -webkit-box-shadow: 0px 5px 15px #cccccc;
+    box-shadow: 0px 5px 15px #cccccc;
+    padding: 5px;
+}
+
+#tweets img {
+    float: left;
+    padding: 3px;
+    border: 1px solid #ddd;
+    background: #fff;
+}
+
+#tweets ul {
+    float: left;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 15px;
+    width: 400px;
+}
+
+#tweets ul li {
+    margin-bottom: 4px;
+}
