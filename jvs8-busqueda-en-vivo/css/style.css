@@ -1,0 +1,39 @@
+/* 
+    Document   : style
+    Created on : 26/01/2011, 01:09:42 PM
+    Author     : JV Software
+    Description:
+        Estilos para tutorial 8.
+*/
+
+body {
+    background: #DFF1FF;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+#main {
+    margin: 50px auto;
+    width: 500px;
+    padding: 0 15px 15px;
+    border: 1px solid #C3D0DF;
+}
+
+#main h1 {
+    color: #59839F;
+    border-bottom: 1px dotted #59839F;
+}
+
+#main table {
+    margin-top: 10px;
+    width: 100%;
+}
+
+#main table th{
+    background: #9BB9CF;
+    color: #FFFFFF;
+}
+
+#main table tbody tr:nth-child(even) td{
+    background: #FFFFFF;
+}
+
