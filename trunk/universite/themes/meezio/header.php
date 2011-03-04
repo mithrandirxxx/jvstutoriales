@@ -75,7 +75,14 @@ foreach ($options as $value) {
 	<script type="text/javascript">
 		$(function()
 		{
-			$('.container').jScrollPane();
+                    $('#menu li a').click(function(e){
+                        var hash = $j(this).attr('href');
+                        var $toElement = $(hash);
+
+                        $('.container').scrollTo($toElement, 2000, {axis: 'x'});
+
+                    });
+			//$('.container').jScrollPane();
 		});
 	</script>
 
