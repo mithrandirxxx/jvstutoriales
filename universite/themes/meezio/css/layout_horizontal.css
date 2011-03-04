@@ -99,7 +99,7 @@ blockquote, q {
 ----------------------------------------------------------------------------------------------------*/
 
 .container {
-	width: 860px;
+	width: 923px;
 	height:380px;
 	margin:120px auto 0 auto;
 	position:relative;
@@ -110,7 +110,8 @@ blockquote, q {
 
 .grid_260,
 .grid_540,
-.grid_820 {
+.grid_820,
+.grid_330{
 	display:inline;
 	float: left;
 	position: relative;
@@ -126,6 +127,21 @@ blockquote, q {
 
 .container .grid_260 {
 	width:260px;
+}
+
+.container .grid_330 {
+	width:330px;
+        margin-right: 20px;
+        margin-left: 0;
+}
+
+.container .grid_330 img{
+	display: block;
+        margin-bottom: 20px;
+}
+
+.container .grid_330{
+	
 }
 
 .container .grid_260 a{
@@ -285,7 +301,7 @@ img {
 	z-index:999;
 }
 	#header_box { /* Centered container for the header, contains the menu and the logo */
-		width: 820px;
+		width: 923px;
 		margin:0px auto;
 		position: relative;
 		padding:0px 10px 0px 10px; /* Some left and right paddings to fix an alignment issue */
@@ -713,7 +729,7 @@ Styles applied to the social icons, they're reduced (24px instead of 48px)
         background: #F9F9F9;
 }
 	#footer_box { /* Centered footer container with som padding to align properly the content */
-		width: 820px;
+		width: 923px;
 		height:30px;
 		margin:0px auto;
 		position: relative;

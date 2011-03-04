@@ -3,40 +3,63 @@
  * @package WordPress
  * @subpackage Default_Theme
  */
+/* Retrieve options set by admin */
+global $options;
+foreach ($options as $value) {
+	if (get_settings( $value['id'] ) === FALSE) {
+		$$value['id'] = $value['std'];
+	} else {
+		$$value['id'] = get_settings( $value['id'] );
+	}
+}
 
 get_header(); ?>
 
-	<div id="content" class="narrowcolumn" role="main">
-	<?php if (have_posts()) : ?>
+<div id="wrapper">
+	
+		<?php $pages = get_posts(array('numberposts' => 5, 'post_type' => 'page', 'post_parent' => 4, 'order' => 'ASC')); ?>
 
-		<?php while (have_posts()) : the_post(); ?>
-			<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
-				<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-				<small><?php the_time('F jS, Y') ?> <!-- by <?php the_author() ?> --></small>
-
-				<div class="entry">
-					<?php the_content('Read the rest of this entry &raquo;'); ?>
-				</div>
-
-				<p class="postmetadata"><?php the_tags('Tags: ', ', ', '<br />'); ?> Posted in <?php the_category(', ') ?> | <?php edit_post_link('Edit', '', ' | '); ?>  <?php comments_popup_link('0 comments &#187;', '1 comment &#187;', '% comments &#187;'); ?></p>
-			</div>
-
-		<?php endwhile; ?>
-
-		<div class="blog_navigation">
-			<div class="alignleft"><?php next_posts_link('%link', 'Older Entries', TRUE) ?></div>
-			<div class="alignright"><?php previous_posts_link('%link', 'Newer Entries', TRUE) ?></div>
-			<div class="clear"></div>
-		</div>
-
-	<?php else : ?>
-
-		<h2 class="center">Not Found</h2>
-		<p class="center">Sorry, but you are looking for something that isn't here.</p>
-		<?php get_search_form(); ?>
-
-	<?php endif; ?>
-
-	</div>
+		<?php $cnt = 0; ?>
+			
+                          
+                            
+					<div class="container" style="overflow: auto;">
+                                            <div class="content" style="width: 1750px">
+                                            <?php 
+                                            foreach($pages as $page) {
+                                                $post_keys = get_post_custom_values('section_id', $page->ID);
+                                                $page_content = get_page($page->ID);?>
+						<div id="<?php echo $page->post_name; ?>" class='grid_330'>
+                                                <?php
+                                                        echo do_shortcode($page_content->post_content);
+                                                ?>
+						</div>
+                                                <?php
+                                                    $cnt++;
+                                            }
+                                            ?>
+						<div class="clear"></div>
+                                            </div>
+				<div class="navigation">
+					<?php
+						/*if($cnt > 0) {
+							echo '<h1 class="previous"><a class="prev_page change_section panel" title="'. get_menu_item_ID($post_key[$cnt-1]) .'" href="#'.$post_key[$cnt-1].'"></a></h1>';
+							if($cnt < count($pages)-1) {
+								echo '<h1 class="next"><a class="next_page change_section panel" title="'. get_menu_item_ID($post_key[$cnt+1]) .'" href="#'.$post_key[$cnt+1].'"></a></h1>';
+							} else {
+								if($mzo_blog_category != "") {
+									echo '<h1 class="next"><a class="next_page change_section panel" title="'. get_menu_item_ID($post_key[$cnt+1]) .'" href="?cat='.$mzo_blog_category.'"></a></h1>';
+								}
+							}
+						} else {
+							echo '<h1 class="next"><a class="next_page change_section panel" title="'. get_menu_item_ID($post_key[$cnt+1]) .'" href="#'.$post_key[$cnt+1].'"></a></h1>';
+						}*/
+					?>
+				</div> <!-- navigation -->
+			  </div> <!-- container -->
+		
+		
+	
+</div> <!-- wrapper -->
 
 <?php get_footer(); ?>
