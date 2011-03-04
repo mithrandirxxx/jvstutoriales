@@ -710,6 +710,7 @@ Styles applied to the social icons, they're reduced (24px instead of 48px)
 	width: 100%;
 	height:30px;
 	padding-top:10px;
+        background: #F9F9F9;
 }
 	#footer_box { /* Centered footer container with som padding to align properly the content */
 		width: 820px;
@@ -717,5 +718,5 @@ Styles applied to the social icons, they're reduced (24px instead of 48px)
 		margin:0px auto;
 		position: relative;
 		padding:0px 10px 0px 10px;
-                background: url('../images/logo-footer.png') right top no-repeat;
+                background: #F9F9F9 url('../images/logo-footer.png') right top no-repeat;
 	}
