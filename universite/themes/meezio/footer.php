@@ -21,7 +21,9 @@ foreach ($options as $value) {
 
 <div id="footer" role="contentinfo">
     <div id="footer_box">
+        <?php if ($mzo_footer_text): ?>
         <p><?php echo $mzo_footer_text; ?></p>
+        <?php endif; ?>
     </div>
 </div>
 
