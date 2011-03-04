@@ -1,0 +1,9 @@
+a, .colored, .previous a:hover, .next a:hover, .list, #content h1, #content h2, #sidebar ul li div.yd_rp_widget ul li p a  {
+	color:#E8B36D;
+}
+.list {
+	list-style-image: url("../images/common/bullet_yellow.jpg");
+}
+h1 a:hover {
+	color:#E8B36D;
+}

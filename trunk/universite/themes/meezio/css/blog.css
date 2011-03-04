@@ -1,0 +1,308 @@
+/* SPECIFIC BLOG STYLINGS */
+
+.blog {
+	margin-bottom:12px;
+}
+
+#posts {
+	padding: 0 20px 40px 0;
+}
+	#posts img {
+		margin-bottom:20px;
+		display:inline;
+		float: left;
+		position: relative;
+		border:#2B2B2B solid 1px;
+	}
+	#posts img.avatar{
+		border:none;
+		margin: 0;
+	}
+	#posts h1, #posts h2, #posts h3 {
+		color: #2B2B2B;
+	}
+	#posts cite, .commentmetadata {
+		font-size: 11px;
+		font-style: normal;
+	}
+
+	#posts ul li, #posts ol li {
+		list-style: circle inside;
+		font-size: 11px;
+		padding-left: 15px;
+		margin: 10px 0;
+	}
+	#posts ol li {
+		list-style-type: decimal;
+	}
+	#posts ol.commentlist li {
+		list-style-type: none;
+	}
+h1 a {
+	color:#2B2B2B;
+}
+
+.sidebar {
+	border-left:#999999 1px dotted;
+	width:230px;
+	padding:11px 0px 0px 19px;
+	display:inline;
+	float: left;
+	position: relative;
+	margin-left: 20px;
+}
+	#sidebar h2{
+		color: #2B2B2B;
+	}
+	#sidebar ul li#yd-recent-posts div  {
+		margin:15px 0 15px 15px;
+	}
+	.sidebar ul li#yd-recent-posts div {
+		margin-left: 15px;
+	}
+	.sidebar ul li div.yd_rp_widget ul li p a{
+		border: none;
+		padding-bottom: 0;
+		font-weight: bold;
+	}
+	.yd_rp_widget ul li p img {
+		padding: 2px;
+		margin: 12px 0 0 0;
+		border: 1px solid #000;
+		width:54px;
+		height:21px;
+		float:left;
+	}
+.entry {
+	width: 540px;
+}
+
+.entry p a.more-link {
+	display: block;
+	text-align: right;
+}
+.categories ul, .archive_list{
+	margin:15px 0 32px 15px;
+}
+	.categories li, .archive_list li {
+		font-size: 11px;
+		text-indent: 0px;
+		padding:11px 0 11px 0px;
+		border-bottom:#999999 1px dotted;
+	}
+	.categories h2{
+		margin-left: 0px;
+	}
+	.yd_rp_widget ul li {
+		font-size: 11px;
+		text-indent: 0px;
+		border-bottom:#999999 1px dotted;
+	}
+.latest_posts {
+	margin:0 0 15px 15px;
+}
+	.latest_posts li {
+		font-size: 11px;
+		text-indent: 0px;
+		padding:11px 0 7px 0px;
+		border-bottom:#999999 1px dotted;
+		margin-bottom:7px;
+	}
+.latest_post_title {
+	width: 150px;
+	display: block; 
+	float: right;
+	margin-top: 7px;
+}
+.post_separator {
+	height:30px;
+	width:100%;
+	float:left;
+}
+.post_title, .post_date {
+	line-height:16px;
+}
+.post_thumb {
+	float:left;
+	width:50px;
+	height:50px;
+	margin-right:16px;
+}
+.post_comment {
+}
+	.post_comment li {
+		font-size: 11px;
+		text-indent: 0px;
+		padding:10px 0px 20px 0px;
+		margin-bottom:10px;
+		min-height:100px;
+	}
+		.avatar {
+			float:left;
+			width:80px;
+			height:80px;
+			margin-right:20px;
+		}
+		.user_name {
+			font-size:11px;
+			float:right;
+			margin-top:5px;
+		}
+		.date {
+			font-size:10px;
+			float:right;
+			margin-top:5px;
+		}
+		.user_comment {
+			border:#dddddd 1px solid;
+			background-color:#FFF;
+			padding:14px;
+			margin-left:100px;
+			line-height:16px;
+		}
+
+
+
+.post_form {
+	font-family:Arial,Helvetica,sans-serif;
+	font-weight:normal;
+	font-size:12px;
+	margin-top:30px;
+}
+	.post_form li {
+		list-style:none;
+		display:inline;
+		width:100%;
+	}
+	.post_form li label {
+		padding:0;
+		margin:0;
+		width:80px;
+		float:left;
+		margin-right:20px;
+	}
+
+	/*
+	Styles for the contact form fields
+	*/
+	
+	#post_form_name, #post_form_email, #post_form_message {
+		width:430px;
+		padding:0 3px 0 3px;
+		border:none; 
+		background-color:#FFF;
+		border:#dddddd solid 1px;
+		font-size:12px;
+		margin-bottom:20px;
+	}
+		#post_form_name, #post_form_email {
+			height:30px;
+		}
+		#post_form_message {
+			font-family:Arial,Helvetica,sans-serif;
+			height:120px;
+			overflow:auto;
+		}
+	
+	/*
+	Styles for the buttons "send" and "reset" in the contact form
+	*/
+	.post_form_button {
+		font-family:Arial,Helvetica,sans-serif;
+		text-transform:uppercase;
+		font-size:12px;
+		background:#FFF;
+		border:#dddddd solid 1px;
+		float:right;
+		margin-left:20px;
+		margin-right:2px;
+		height:30px;
+		width:70px;
+	}
+		.post_form_button:hover {
+			background:#333334;
+			color:#FFF;
+			border:#2B2B2B solid 1px;
+		}
+.blog_navigation {
+	font-size: 11px;
+	margin-bottom: 10px;
+}
+	.blog_navigation .alignleft {
+		float: left;
+	}
+	.blog_navigation .alignright {
+		float: right;
+	}
+#posts #comments{
+	margin-top: 30px;
+	color: #2B2B2B;
+}
+	.comment-body {
+		margin-bottom: 30px;
+	}
+	.comment-body p {
+		border:#dddddd 1px solid;
+		background-color: #FFF;
+		width: 410px;
+		padding: 10px;
+		float: right;
+	}
+	.vcard {
+		width: 80px;
+		display: block;
+		float: left;
+		text-align: right;
+	}
+#respond{
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+	#commentform p input, #commentform p textarea {
+		width: 435px;
+		border: 1px solid #DDD;
+		float: left;
+	}
+	#commentform input {
+		height: 30px;
+		margin-bottom: 10px;
+	}
+	#commentform input, #commentform textarea , #commentform p label {
+		margin-bottom: 10px;
+		padding: 0 3px;
+	}
+	#commentform p label {
+		width: 80px;
+		display: block;
+		float: left;
+	}
+	#commentform #reset, #commentform #submit {
+		background: #FFF;
+		border:1px solid #DDDDDD;
+		float:right;
+		font-size:12px;
+		height:30px;
+		margin-left:20px;
+		margin-right:22px;
+		text-transform:uppercase;
+		width:70px;
+	}
+	#commentform #reset {
+		margin-right: 0;
+	}
+	
+/* OVERWRITING SOME CSS NOT NEEDED IN THE BLOG AREA */
+
+html {
+	overflow:auto; /* Shows scrolling bars in IE */
+}
+body {
+	overflow:visible; /* Shows scrolling bars in IE */
+}
+#wrapper {	/* First container required */
+	overflow:visible; /* Shows scrolling bars in IE */
+}
+#footer {
+	position: fixed;
+}
+
