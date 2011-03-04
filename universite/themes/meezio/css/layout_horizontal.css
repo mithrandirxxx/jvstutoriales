@@ -1,0 +1,721 @@
+/*
+Theme Name : Meezio
+Theme URL : http://themeforest.net/item/meezio/83681
+Author URL : http://themeforest.net/user/Keliah
+Version : 2.0
+*/
+
+/*
+
+TABLE OF CONTENTS
+
+01 RESET
+02 GRID
+03 GENERAL STYLES
+04 HEADER
+05 IMAGES
+06 TYPOGRAPHY
+07 TABS
+08 CONTACT
+09 SOCIAL ICONS
+10 FOOTER
+
+*/
+
+
+
+/*  _______________________________________
+
+	01 RESET
+    _______________________________________  */
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color: black;
+	background: white;
+}
+ol, ul {
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+
+
+/*  _______________________________________
+
+	02 GRID
+    _______________________________________  */
+
+
+
+/*
+	Variable Grid System.
+	Learn more ~ http://www.spry-soft.com/grids/
+	Based on 960 Grid System - http://960.gs/
+
+	Licensed under GPL and MIT.
+*/
+
+
+/* Containers
+----------------------------------------------------------------------------------------------------*/
+
+.container {
+	width: 860px;
+	height:380px;
+	margin:120px auto 0 auto;
+	position:relative;
+}
+
+/* Grid >> Global
+----------------------------------------------------------------------------------------------------*/
+
+.grid_260,
+.grid_540,
+.grid_820 {
+	display:inline;
+	float: left;
+	position: relative;
+	margin-left: 20px;
+	font-size:11px;
+	line-height:16px; /* Gives space in the text */
+	padding:0;
+	text-align:left;
+}
+
+/* Grid >> 3 Columns
+----------------------------------------------------------------------------------------------------*/
+
+.container .grid_260 {
+	width:260px;
+}
+
+.container .grid_260 a{
+	margin: 10px 0;
+}
+
+.container .grid_260 a.fancybox{
+	width:250px;
+	height: 125px;
+	display: block;
+	overflow: hidden;
+	border: 1px solid #000;
+	padding: 5px;
+}
+
+.container .grid_260 a.fancybox span{
+	display: block;
+	width: 250px;
+	height: 125px;
+	overflow: hidden;
+}
+
+.container .grid_540 {
+	width:540px;
+}
+
+.container .grid_820 {
+	width:820px;
+}
+
+/* Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+
+/* http://sonspring.com/journal/clearing-floats */
+
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+/* http://perishablepress.com/press/2008/02/05/lessons-learned-concerning-the-clearfix-css-hack */
+
+.clearfix:after {
+	clear: both;
+	content: ' ';
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+* html .clearfix {
+	height: 1%;
+}
+
+.clearfix {
+	display: block;
+}
+
+
+
+/*  _______________________________________
+
+	03 GENERAL STYLES
+    _______________________________________  */
+
+
+
+html {
+	overflow:hidden; /* Hides scrolling bars in IE */
+}
+body {
+	height:100%;
+	width:100%;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	font-family:"Lucida Sans Unicode","Lucida Grande",Arial,Helvetica,sans-serif;
+	color:#2B2B2B;
+}
+img {
+	border:none; 
+	margin:0;
+	padding:0;
+}
+
+/* 
+
+   The following containers are all required to display properly the scrolling layout.
+   The "mask" extends the width in percentages, and "item" gives the width of 1 single section.
+   So if you need 40 sections, the "mask" should have a 4000% width and "item" would be 2.5%.
+   The total width can be bigger, no matter, this template comes with 8 sections and the CSS
+   is set to contain 20 sections.
+   
+   In short, if you don't need more than 20 sections, there's nothing to change for "wrapper",
+   "mask", "item" and "content" DIVs.
+   
+*/
+
+#wrapper {	/* First container required */
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	overflow:hidden;
+}
+	
+	#mask {	/* Second container required, the 100% is multiplied by the number of sections, here 20 */
+		width:2000%; /* Value for 20 sections (20 X 100%), it's divided with the "item" class */ 
+		height:100%;
+	}
+	.item {
+		width:5%; /* Each section has a 5% width for a maximum of 20 sections (20 X 5% = 100% of the total width) */
+		height:100%;
+		float:left;
+		min-width:960px;
+	}
+	.content { /* Container for content */
+		width:100%;
+		height:100%;
+		margin:0 auto;
+		position:relative;
+	}
+	
+
+
+/*  _______________________________________
+
+	04 HEADER
+    _______________________________________  */
+
+
+
+	/*
+	Here are all styles for the header and the menu.
+	This header sticks to the top of the layout.
+	*/
+	
+
+#header { /* Container to display the background on the whole browser width */
+	width:100%;
+	height:120px;
+	margin:0;
+	padding:0;
+	position:fixed;
+	z-index:999;
+}
+	#header_box { /* Centered container for the header, contains the menu and the logo */
+		width: 820px;
+		margin:0px auto;
+		position: relative;
+		padding:0px 10px 0px 10px; /* Some left and right paddings to fix an alignment issue */
+	}
+	#logo {
+		float:right;
+	}
+
+/* Menu */
+
+#menu {
+	background:none;
+	margin:38px 0px 0px 0px; /* Some top spacing */
+	list-style:none;
+	float:left;
+	font-size: 16px;
+}
+
+	#menu li {
+		list-style:none;
+		float:left;
+		padding-bottom:8px;
+	}
+		#menu li a {
+			color:#999999;
+			text-decoration:none;
+			margin-right:40px; /* Spacing between menu items */
+			font-family:Arial, Helvetica, sans-serif;
+			font-weight:bold;
+			position:relative;
+			z-index:888;
+			padding-bottom:20px;
+		}
+		#menu li a:hover, #menu li a.active {
+			color:#2B2B2B;
+			background:url("../images/icons/menu_hover.png") no-repeat center 22px;
+		}
+		#menu li a.submenu {
+			background:url("../images/icons/submenu.png") no-repeat center 19px;
+		}
+		#menu .submenu:hover, #menu .submenu.active {
+			background:url("../images/icons/submenu_hover.png") no-repeat center 22px;
+		}
+
+		/* Submenus */
+		
+		#menu li ul {
+		   display: none; /* Not displayed, they appear on mouse hover */
+		}
+		#menu li:hover ul, #menu li.hover ul {
+		   position: absolute;
+		   display: inline; /* Inline positionning */
+		   left: 0;
+		   width: 100%;
+		   margin:0px 10px;
+		   padding: 40px 0;
+		   top:40px;
+		}
+		#menu li:hover li a, #menu li.hover li a {
+		   color: #999999;
+		   font-size:12px;
+		   margin-right:20px;
+		   background:url("../images/icons/bullet_menu.png") no-repeat left top;
+		   padding-left:15px;
+		}
+		#menu li li a:hover {
+		   color: #2B2B2B;
+		   background:url("../images/icons/bullet_menu_hover.png") no-repeat left top;
+		}
+
+
+
+/*  _______________________________________
+
+	05 IMAGES
+    _______________________________________  */
+
+
+
+/*
+Here are the styles applied to the small thumnbails (see the "about me" section)
+*/
+
+.thumbnail {
+	width:260px;
+	height:70px;
+	padding:0;
+	margin:0 0 25px 0;
+}
+
+	.thumbnail li {
+		float:left;
+		display:block;
+	}
+	
+.thumb {
+	margin-right:25px;
+}
+
+/*
+Style applied to the pictures within the "portfolio" section 
+*/
+
+.portfolio260 {
+	height:125px;
+	width:260px;
+	margin-bottom:20px;
+	display:inline;
+	float: left;
+	position: relative;
+	border:#2B2B2B solid 1px;
+}
+
+/*
+Styles for the arrows displayed at the bottom of each section
+*/
+.navigation {
+	width: 820px;
+	margin: 0 auto;
+}
+
+.arrow {
+	position:absolute;
+	bottom:0;
+	left:0px;
+}
+	.previous a, .next a {
+		display:block;
+		width:17px;
+		height:26px;
+	}
+	
+		.previous {
+			float:left;
+			margin-left:0px;
+			left:0;
+			background:url("../images/icons/previous_horizontal.png") no-repeat left bottom;
+		}
+		.next {
+			float:right;
+			background:url("../images/icons/next_horizontal.png") no-repeat right bottom;
+		}
+			.previous a:hover, .next a:hover {
+				text-decoration:none;
+			}
+		.previous span, .next span {
+			display:none;
+		}
+
+
+
+/*  _______________________________________
+
+	06 TYPOGRAPHY
+    _______________________________________  */
+
+
+
+p, h1, h2, h3, h4, h5, h6 {
+	margin-bottom:15px; /* Gives some space between paragraphs */
+	padding:0;
+	color:#555555;
+}
+
+p {	/* Default font styles for paragraphs */
+	font-size:11px;
+	line-height:16px; /* Gives space in the text */
+	padding:0;
+	text-align:left;
+}
+
+/* Headings */
+
+h1, h2, h3, h4, h5, h6 {
+	font-family:Arial, Helvetica, sans-serif;
+}
+h1 {
+	font-weight:bold;
+	font-size:26px;
+	color:#2B2B2B;
+	line-height:36px;
+	margin-bottom:24px;
+}
+
+h2 {
+	font-weight:bold;
+	font-size:18px;
+	color:#2B2B2B;
+	margin-bottom:15px;
+}
+
+.black {
+	font-weight:bold;
+}
+a {
+	text-decoration:none;
+	font-weight:bold;
+}
+	a:hover {
+		text-decoration:underline;
+	}
+	h1 a:hover {
+		text-decoration:none;
+	}
+.list {
+	font-size: 11px;
+	font-weight:bold;
+	line-height:18px;
+	margin:15px 0 15px 15px;
+}
+	.list li {
+		text-indent: 0px;
+	}
+
+#back {
+	margin:160px 0px 0px 340px;
+}
+.right {
+	text-align:right;
+}
+
+
+
+/*  _______________________________________
+
+	07 TABS
+    _______________________________________  */
+
+
+
+ul.tabs {
+	margin: 0px 0px 10px 0px;
+	padding: 0;
+	float: left;
+	list-style: none;
+	height: 32px; /*--Set height of tabs--*/
+	width: 100%;
+}
+ul.tabs li {
+	float: left;
+	margin: 0px 20px 0px 0px;
+	padding: 0;
+	overflow: hidden;
+	position: relative;
+}
+ul.tabs li a {
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:16px;
+	text-decoration: none;
+	color:#2B2B2B;
+	display: block;
+	padding: 5px 5px 10px 5px;
+	outline: none;
+}
+ul.tabs li a:hover {
+	background:url("../images/icons/tabs_hover.png") no-repeat center bottom;
+	color:#FFFFFE;
+	text-decoration: none;
+}
+html ul.tabs li.current a, html ul.tabs li.current a:hover  { /*--Makes sure that the active tab does not listen to the hover properties--*/
+	background:url("../images/icons/tabs_hover.png") no-repeat center bottom;
+	color:#FFFFFE;
+}
+.tab_content {
+	padding: 0px;
+}
+.tab_container {
+	overflow: hidden;
+	clear: both;
+	float: left; 
+	width: 100%;
+}
+
+
+
+/*  _______________________________________
+
+	08 CONTACT FORM
+    _______________________________________  */
+
+
+
+/*
+Styles for the contact from labels
+*/
+
+#contact_form {
+	font-family:"Lucida Sans Unicode","Lucida Grande",Arial,Helvetica,sans-serif;
+	font-size:11px;
+}
+	#contact_form  p {
+		font-weight:bold;
+		padding:0;
+		margin:0;
+	}
+
+	#contact_form  textarea {
+		width: 20em;
+	}
+
+
+	/*
+	Styles for the contact form fields
+	*/
+	
+	#name, #email, #message {
+		width:260px;
+		padding:0 3px 0 3px;
+		border:none; 
+		margin:5px 0 5px 0;
+		background-color:#FFF;
+		border:#2B2B2B solid 1px;
+		font-size:12px;
+	}
+		#name, #email {
+			height:20px;
+		}
+		#message {
+			font-family:"Lucida Sans Unicode","Lucida Grande",Arial,Helvetica,sans-serif;
+			height:75px;
+			overflow:auto;
+		}
+	
+	/*
+	Styles for the buttons "send" and "reset" in the contact form
+	*/
+	.button {
+		font-family:"Lucida Sans Unicode","Lucida Grande",Arial,Helvetica,sans-serif;
+		font-size:11px;
+		background:#FFF;
+		border:#2B2B2B solid 1px;
+		margin:5px 15px 0px 0px;
+		float:left;
+		height:22px;
+		width:70px;
+	}
+		.button:hover {
+			background:#333334;
+			color:#FFF;
+			border:#2B2B2B solid 1px;
+		}
+	/*
+	Styles for the messages displayed when sending an email
+	*/
+	.message {
+		display:none;
+		width:260px;
+		float:left;
+		margin-bottom:5px;
+	}
+	#alert li {
+		width:auto;
+		float:left;
+	}
+	/* 
+	"error" and "send" are the styles of the messages displayed when the user sends
+	a message through the contact form
+	*/
+	.error {
+		font-size:11px;
+		color:#ED4340;
+	}
+	
+	.sent {
+		font-size:11px;
+		color:#75A133;
+	}
+	
+	.contact {
+		position:relative;
+	}
+		.contact ul {
+			list-style-type:none;
+		}
+				.contact li.special {
+					display:none;
+				}
+
+
+
+/*  _______________________________________
+
+	09 SOCIAL ICONS
+    _______________________________________  */
+
+
+
+/* 
+Styles applied to the social icons, they're reduced (24px instead of 48px)
+*/
+
+.iconbar {
+	float: left;
+	list-style: none;
+	margin-bottom:20px;
+	position:relative;
+	width:260px;
+}
+	.iconbar li {
+		width: 24px;
+		height: 24px;
+		margin-right: 10px;
+		float: left;
+		position: relative;
+	}
+
+
+
+/*  _______________________________________
+
+	10 FOOTER
+    _______________________________________  */
+
+
+
+#footer { /* Footer container (whole browser width) */
+	position: absolute;
+	bottom: 0;
+	border-top:#999 dotted 1px;
+	border-bottom:#999 solid 1px;
+	width: 100%;
+	height:30px;
+	padding-top:10px;
+}
+	#footer_box { /* Centered footer container with som padding to align properly the content */
+		width: 820px;
+		height:30px;
+		margin:0px auto;
+		position: relative;
+		padding:0px 10px 0px 10px;
+                background: url('../images/logo-footer.png') right top no-repeat;
+	}

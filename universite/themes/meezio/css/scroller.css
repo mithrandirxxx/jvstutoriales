@@ -1,0 +1,27 @@
+.scroll-pane {
+	height:380px;
+}
+.jScrollPaneContainer {
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+}
+.jScrollPaneTrack {
+	position: absolute;
+	cursor: pointer;
+	right: 0;
+	top: 0;
+	height: 100%;
+	background: #DDDDDD;
+}
+.jScrollPaneDrag {
+	position: absolute;
+	background: #333333 url("../images/icons/drag.png") no-repeat 50% 50%;
+	cursor: pointer;
+	overflow: hidden;
+}
+.jScrollPaneTrack, .jScrollPaneDrag {
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+}

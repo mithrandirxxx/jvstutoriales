@@ -1,0 +1,20 @@
+.container {
+	margin:120px auto 0px auto;
+}
+
+#content.narrowcolumn, #content.widecolumn {
+	margin:120px 40px 40px 40px;
+}
+
+.item {
+	width:950px; /* Each section has a 5% width for a maximum of 20 sections (20 X 5% = 100% of the total width) */
+}
+
+#header_box { /* Centered container for the header, contains the menu and the logo */
+	margin:0px 0px 0px 50px;
+}
+
+#footer_box { /* Centered footer container with som padding to align properly the content */
+	margin:0px 0px 0px 40px;
+}
+

@@ -1,0 +1,10 @@
+a, .colored, .previous a:hover, .next a:hover, .list , #content h1, #content h2, #sidebar ul li div.yd_rp_widget ul li p a {
+	color:#6495ed;
+}
+.list {
+	list-style-image: url("../images/common/bullet_blue.jpg");
+}
+
+h1 a:hover {
+	color:#6495ed;
+}
