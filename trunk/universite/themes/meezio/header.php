@@ -83,6 +83,16 @@ foreach ($options as $value) {
                         $('.container').scrollTo($toElement, 2000, {axis: 'x'});
 
                     });
+
+                    $('#next_index a').live('click', function(e){
+                        e.preventDefault();
+                        $('.container').scrollTo('+=350px', 2000, {axis: 'x'});
+                    });
+
+                    $('#prev_index a').live('click', function(e){
+                        e.preventDefault();
+                        $('.container').scrollTo('-=350px', 2000, {axis: 'x'});
+                    });
 		});
 	</script>
         <?php else:  ?>

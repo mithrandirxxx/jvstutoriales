@@ -23,13 +23,13 @@ get_header(); ?>
 			
                           
                             
-					<div class="container" style="overflow: hidden;">
-                                            <div class="content" style="width: 2100px">
+					<div class="container" style="overflow: hidden; height: 541px;">
+                                            <div class="content" style="width: 2100px; height: 541px;">
                                             <?php 
                                             foreach($pages as $page) {
                                                 $post_keys = get_post_custom_values('section_id', $page->ID);
                                                 $page_content = get_page($page->ID);?>
-						<div id="<?php echo $page->post_name; ?>" class='grid_330'>
+						<div id="<?php echo $page->post_name; ?>" class='grid_330' style="height: 541px; background: url('<?php bloginfo('template_url'); ?>/images/background/bg_<?php echo $cnt + 1; ?>.png') bottom center no-repeat;">
                                                 <?php
                                                         echo do_shortcode($page_content->post_content);
                                                 ?>
@@ -40,23 +40,17 @@ get_header(); ?>
                                             ?>
 						<div class="clear"></div>
                                             </div>
-				<div class="navigation">
-					<?php
-						/*if($cnt > 0) {
-							echo '<h1 class="previous"><a class="prev_page change_section panel" title="'. get_menu_item_ID($post_key[$cnt-1]) .'" href="#'.$post_key[$cnt-1].'"></a></h1>';
-							if($cnt < count($pages)-1) {
-								echo '<h1 class="next"><a class="next_page change_section panel" title="'. get_menu_item_ID($post_key[$cnt+1]) .'" href="#'.$post_key[$cnt+1].'"></a></h1>';
-							} else {
-								if($mzo_blog_category != "") {
-									echo '<h1 class="next"><a class="next_page change_section panel" title="'. get_menu_item_ID($post_key[$cnt+1]) .'" href="?cat='.$mzo_blog_category.'"></a></h1>';
-								}
-							}
-						} else {
-							echo '<h1 class="next"><a class="next_page change_section panel" title="'. get_menu_item_ID($post_key[$cnt+1]) .'" href="#'.$post_key[$cnt+1].'"></a></h1>';
-						}*/
-					?>
-				</div> <!-- navigation -->
-			  </div> <!-- container -->
+
+                                        </div> <!-- container -->
+                                        <div class="navigation">
+	
+				
+                                            <h1 id="prev_index" class="previous"><a href="#"></a></h1>
+							
+                                            <h1 id="next_index" class="next"><a href="#"></a></h1>
+							
+
+                                        </div> <!-- navigation -->
 		
 		
 	
