@@ -17,14 +17,14 @@ get_header(); ?>
 
 <div id="wrapper">
 	
-		<?php $pages = get_posts(array('numberposts' => 5, 'post_type' => 'page', 'post_parent' => 4, 'order' => 'ASC')); ?>
+		<?php $pages = get_posts(array('numberposts' => 6, 'post_type' => 'page', 'post_parent' => 4, 'orderby' => 'menu_order', 'order' => 'ASC')); ?>
 
 		<?php $cnt = 0; ?>
 			
                           
                             
-					<div class="container" style="overflow: auto;">
-                                            <div class="content" style="width: 1750px">
+					<div class="container" style="overflow: hidden;">
+                                            <div class="content" style="width: 2100px">
                                             <?php 
                                             foreach($pages as $page) {
                                                 $post_keys = get_post_custom_values('section_id', $page->ID);

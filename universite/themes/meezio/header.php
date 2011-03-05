@@ -72,18 +72,30 @@ foreach ($options as $value) {
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.mousewheel.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.em.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jScrollPane.js"></script>
+        <?php if (is_home() || is_front_page()): ?>
 	<script type="text/javascript">
-		$(function()
-		{
+		$(function(){
                     $('#menu li a').click(function(e){
-                        var hash = $j(this).attr('href');
+                        
+                        var hash = $(this).attr('href');
                         var $toElement = $(hash);
 
                         $('.container').scrollTo($toElement, 2000, {axis: 'x'});
 
                     });
-			//$('.container').jScrollPane();
 		});
+	</script>
+        <?php else:  ?>
+        <script type="text/javascript">
+            $(function(){
+                $('.container').jScrollPane();
+            });
+	</script>
+        <?php endif; ?>
+        <script type="text/javascript">
+            $(function(){
+                $('#menu ul').prev('a').addClass('submenu');
+            });
 	</script>
 
 <?php } ?>
@@ -98,7 +110,16 @@ foreach ($options as $value) {
 
 <div id="header" style="background: url('<?php bloginfo('template_url'); ?>/images/background/<?php echo $mzo_background_image; ?>_top.jpg');">
     <div id="header_box">
-		<?php displayMenu(1, 2); ?>        
+                <?php
+                if(function_exists('wp_nav_menu')) {
+                    wp_nav_menu(array(
+                        'theme_location' => 'home-menu',
+                        'depth' => 2,
+                        'menu_id' => 'menu',
+                        'menu_class' => '',
+                        'container' => ''
+                )); }
+                ?>
         <div id="logo" style="background:url('<?php echo $mzo_logo_image ?>'); width:<?php echo $mzo_logo_image_width; ?>px; height:<?php echo $mzo_logo_image_height; ?>px;"></div>
     </div>
 </div>
