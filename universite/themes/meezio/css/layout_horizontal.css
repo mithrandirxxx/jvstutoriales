@@ -1,3 +1,7 @@
+/* @override http://localhost:8888/meezio/wp-content/themes/meezio/css/layout_horizontal.css */
+
+/* @override http://localhost:8888/meezio/wp-content/themes/meezio/css/layout_horizontal.css */
+
 /*
 Theme Name : Meezio
 Theme URL : http://themeforest.net/item/meezio/83681
@@ -100,7 +104,7 @@ blockquote, q {
 .container {
 	width: 923px;
 	height:380px;
-	margin:120px auto 0 auto;
+	margin:115px auto 0 auto;
 	position:relative;
 }
 
@@ -294,8 +298,9 @@ img {
 	
 
 #header { /* Container to display the background on the whole browser width */
+	background: transparent url('../images/nav/nav-image.png') repeat-x;
 	width:100%;
-	height:120px;
+	height:65px;
 	margin:0;
 	padding:0;
 	position:fixed;
@@ -304,12 +309,12 @@ img {
 	#header_box { /* Centered container for the header, contains the menu and the logo */
 		width: 923px;
 		margin:0px auto;
+                height:65px;
 		position: relative;
 		padding:0px 10px 0px 10px; /* Some left and right paddings to fix an alignment issue */
+                background: url('../images/nav/logo-mini.png') right center no-repeat;
 	}
-	#logo {
-		float:right;
-	}
+	
 
 /* Menu */
 

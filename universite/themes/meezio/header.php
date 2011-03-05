@@ -118,7 +118,7 @@ foreach ($options as $value) {
 
 <div id="page" <?php if($mzo_page_alignement == 'centered') {echo 'style="margin: 0 auto;"';} ?>>
 
-<div id="header" style="background: url('<?php bloginfo('template_url'); ?>/images/background/<?php echo $mzo_background_image; ?>_top.jpg');">
+<div id="header">
     <div id="header_box">
                 <?php
                 if(function_exists('wp_nav_menu')) {
@@ -130,6 +130,5 @@ foreach ($options as $value) {
                         'container' => ''
                 )); }
                 ?>
-        <div id="logo" style="background:url('<?php echo $mzo_logo_image ?>'); width:<?php echo $mzo_logo_image_width; ?>px; height:<?php echo $mzo_logo_image_height; ?>px;"></div>
     </div>
 </div>
