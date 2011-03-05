@@ -97,12 +97,13 @@ blockquote, q {
 
 /* Containers
 ----------------------------------------------------------------------------------------------------*/
-
 .container {
 	width: 923px;
 	height:380px;
 	margin:120px auto 0 auto;
 	position:relative;
+        color: #999999;
+        font-size:14px;
 }
 
 /* Grid >> Global
@@ -116,10 +117,11 @@ blockquote, q {
 	float: left;
 	position: relative;
 	margin-left: 20px;
-	font-size:11px;
-	line-height:16px; /* Gives space in the text */
+	font-size: 100%;
+	line-height:18px; /* Gives space in the text */
 	padding:0;
 	text-align:left;
+        
 }
 
 /* Grid >> 3 Columns
