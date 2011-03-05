@@ -349,4 +349,13 @@ add_filter( 'show_admin_bar', '__return_false' );
 
 /* Remove the Admin Bar preference in user profile */
 remove_action( 'personal_options', '_admin_bar_preferences' );
+/**
+ * Add menu
+ */
+function register_menu() {
+    register_nav_menus( array(
+        'home-menu' => __( 'Home Menu' )
+    ) );
+}
+add_action( 'after_setup_theme', 'register_menu' );
 ?>
