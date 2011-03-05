@@ -23,13 +23,13 @@ get_header(); ?>
 			
                           
                             
-					<div class="container" style="overflow: hidden; height: 541px;">
-                                            <div class="content" style="width: 2100px; height: 541px;">
+					<div class="container" style="overflow: hidden; height: 530px;">
+                                            <div class="content" style="width: 2100px; height: 530px;">
                                             <?php 
                                             foreach($pages as $page) {
                                                 $post_keys = get_post_custom_values('section_id', $page->ID);
                                                 $page_content = get_page($page->ID);?>
-						<div id="<?php echo $page->post_name; ?>" class='grid_330' style="height: 541px; background: url('<?php bloginfo('template_url'); ?>/images/background/bg_<?php echo $cnt + 1; ?>.png') bottom center no-repeat;">
+						<div id="<?php echo $page->post_name; ?>" class='grid_330' style="height: 530px; background: url('<?php bloginfo('template_url'); ?>/images/background/bg_<?php echo $cnt + 1; ?>.png') bottom center no-repeat;">
                                                 <?php
                                                         echo do_shortcode($page_content->post_content);
                                                 ?>
