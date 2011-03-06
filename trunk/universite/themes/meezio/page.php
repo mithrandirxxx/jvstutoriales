@@ -3,76 +3,81 @@
  * @package WordPress
  * @subpackage Default_Theme
  */
+if (isset($_GET['ajax'])): ?>
 
- 
-/* Retrieve options set by admin */
-global $options;
-foreach ($options as $value) {
-	if (get_settings( $value['id'] ) === FALSE) {
-		$$value['id'] = $value['std']; 
-	} else { 
-		$$value['id'] = get_settings( $value['id'] ); 
-	}
-}
+    <h2 style="color: #6b9c2b; padding: 10px 10px 0"><?php echo $post->post_title; ?></h2>
+    <?php query_posts(array('post_parent' => $post->ID, 'post_type' => 'page', 'order' => 'ASC')); ?>
+    <?php $index = 0; ?>
+    <div id="ajax-subpages" style="width: 750px; height: 295px; padding: 10px 10px 10px 0; overflow: hidden; position: relative; margin-left: 10px">
+        <div class="subpages-area" style="width: 3750px; height: 300px; overflow: hidden">
+            <?php if ( have_posts () ) : while ( have_posts() ) : the_post(); ?>
+            <div id="<?php echo $index ?>" class="subpage-single" style="width: 750px; height: 300px; float: left; margin-right: 20px; position: relative">
+                <?php the_content(); ?>
+            
+                <div class="navigation-subpage" style="clear: both; width: 750px; position: absolute; bottom: 0">
+                    <?php if ($index - 1 >= 0): ?>
+                    <h1 id="prev_subpage" class="previous" style="margin-bottom: 0"><a href="#<?php echo $index - 1; ?>"></a></h1>
+                    <?php endif; ?>
+                    <?php if ($index != sizeof($posts)): ?>
+                    <h1 id="next_subpage" class="next" style="margin-bottom: 0"><a href="#<?php echo $index + 1; ?>"></a></h1>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <?php $index++; ?>
+            <?php endwhile; ?>
+            <?php else: ?>
+                <p><?php _e('No pages to display'); ?></p>
+            <?php endif; ?>
+        </div>
+        
+    </div>
+        
+        <div class="clear"></div>
+    <script type="text/javascript">
+        $(function(){
+            $('#next_subpage a, #prev_subpage a').live('click', function(e){
+                e.preventDefault();
+                
+                var hash = $(this).attr('href');
+                var $toElement = $(hash);
+                $('#ajax-subpages').scrollTo($toElement, 2000, {axis: 'x'});
+            });
+        });
+    </script>
+<?php
+else:
+    get_header(); ?>
+    
+    <div id="wrapper">
 
-get_header(); ?>
 
-<div id="wrapper">
-	<div id="mask">
-		<?php $pages = list_all_pages(); ?>
+        <div <?php post_class('container'); ?>>
+                <?php if ( have_posts () ) : ?>
 
-		<?php 
-		//Get first and last page ID
-		$cnt = 0;
-		foreach($pages as $page) {
-			$post_keys = get_post_custom_values('section_id', $page->ID);
-			$post_key[$cnt] = $post_keys[0];
-			$cnt++;
-		}
-		?>
-		
-		<?php
-		$cnt = 0;
-		foreach($pages as $page) {
-			$post_keys = get_post_custom_values('section_id', $page->ID);
-		?>
-			<div class="item <?php if(($mzo_transition == 'horizontal_vertical' && $cnt%2 == 0) || ($mzo_transition == 'horizontal')) { echo 'fl';} ?>" id="<?php echo $post_keys[0]; ?>">
-			  <div class="content">
-				<?php 
-					$page_content = get_page($page->ID); 
-				?>
-					<ul class="container">
-						<li class='grid_820'>
-				<?php
-					echo do_shortcode($page_content->post_content);
-				?>
-						</li>
-						<li class="clear"></li>
-					</ul>
-				<div class="navigation">
-					<?php 
-						if($cnt > 0) {
-							echo '<h1 class="previous"><a class="prev_page change_section panel" title="'. get_menu_item_ID($post_key[$cnt-1]) .'" href="#'.$post_key[$cnt-1].'"></a></h1>';
-							if($cnt < count($pages)-1) {
-								echo '<h1 class="next"><a class="next_page change_section panel" title="'. get_menu_item_ID($post_key[$cnt+1]) .'" href="#'.$post_key[$cnt+1].'"></a></h1>';
-							} else {
-								if($mzo_blog_category != "") {
-									echo '<h1 class="next"><a class="next_page change_section panel" title="'. get_menu_item_ID($post_key[$cnt+1]) .'" href="?cat='.$mzo_blog_category.'"></a></h1>';
-								}
-							}
-						} else {
-							echo '<h1 class="next"><a class="next_page change_section panel" title="'. get_menu_item_ID($post_key[$cnt+1]) .'" href="#'.$post_key[$cnt+1].'"></a></h1>';
-						}
-					?>
-				</div> <!-- navigation -->
-			  </div> <!-- content -->
-			</div> <!-- item -->
-	
-		<?php 
-			$cnt++;
-		}
-		?>
-	</div>	<!-- mask -->
-</div> <!-- wrapper -->
+                    <?php if (is_child(0)) : ?>
 
-<?php get_footer(); ?>
+                        <?php while ( have_posts() ) : the_post(); ?>
+                            <?php the_content(); ?>
+                        <?php endwhile; ?>
+
+                    <?php else: ?>
+
+                        <?php while ( have_posts() ) : the_post(); ?>
+                        <?php $parent_page = get_page($post->post_parent);?>
+                        <img src="<?php echo get_first_image($parent_page); ?>" title="<?php echo $parent_page->post_title; ?>" alt="<?php echo $parent_page->post_title; ?>" />
+                        <h2><?php the_title(); ?></h2>
+                        <?php the_content(); ?>
+                        <?php endwhile; ?>
+
+                    <?php endif; ?>
+
+                    <div class="clear"></div>
+
+                <?php endif; ?>
+          </div> <!-- container -->
+
+
+    </div> <!-- wrapper -->
+
+    <?php get_footer(); ?>
+<?php endif; ?>
