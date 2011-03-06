@@ -354,8 +354,57 @@ remove_action( 'personal_options', '_admin_bar_preferences' );
  */
 function register_menu() {
     register_nav_menus( array(
-        'home-menu' => __( 'Home Menu' )
+        'home-menu' => __( 'Home Menu' ),
+        'inner-menu' => __( 'Inner Menu' )
     ) );
 }
 add_action( 'after_setup_theme', 'register_menu' );
+/**
+ * Check child pages
+ */
+function is_child($pageID) {
+    global $post;
+    if( is_page() && ($post->post_parent==$pageID) ) {
+           return true;
+    } else {
+           return false;
+    }
+}
+/**
+ * Get first image of post/page
+ */
+function get_first_image($post) {
+    $first_img = '';
+    ob_start();
+    ob_end_clean();
+    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+    $first_img = $matches [1] [0];
+
+    if(empty($first_img)){
+        return false;
+    }
+    return $first_img;
+}
+/**
+ * Get Subpages
+ */
+function get_child_pages(){
+    global $post;
+    $output = '';
+    
+    $childrens = get_children(array('post_parent' => $post->ID, 'post_type' => 'page', 'post_status' => 'publish'));
+    
+    if ($childrens) {
+        foreach ($childrens as $children) {
+            $output .= '<div class="child-page-link" id="child-page-' . $children->ID . '"><a class="fancybox" href="' . $children->guid . '&ajax=true">' . $children->post_title . '</a></div>';
+        }
+        return '<div id="child-pages">' . $output . '</div>';
+    } else {
+        return false;
+    }
+}
+/**
+ * Subpages shortcode
+ */
+add_shortcode('subpages-links', 'get_child_pages');
 ?>

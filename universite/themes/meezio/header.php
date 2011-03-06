@@ -24,15 +24,6 @@ foreach ($options as $value) {
 
 <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
 
-<?php
-	$pos = strpos(pageURL(),'#');
-	if(isset($_GET['cat']) || isset($_GET['p']) || isset($_GET['m']) || isset($_GET['author']) || ($pos == false && pageURL() != get_bloginfo('url').'/') && pageURL() != get_bloginfo('url')) {
-		$mzo_isBlog = true;
-	} else {
-		$mzo_isBlog = false;
-	}
-?>
-
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/layout_<?php echo $mzo_transition; ?>.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/fancybox.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" type="text/css" media="screen" />
@@ -63,52 +54,52 @@ foreach ($options as $value) {
 </script>
 <![endif]-->
 
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/menu.js"></script>
+
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery-1.4.2.min.js"></script>
-<?php if($mzo_isBlog != true) { ?>
-	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.tabs.js"></script>
-	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.scrollTo.js"></script>
-	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.scroller.js"></script>
-	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.mousewheel.js"></script>
-	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.em.js"></script>
-	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jScrollPane.js"></script>
-        <?php if (is_home() || is_front_page()): ?>
-	<script type="text/javascript">
-		$(function(){
-                    $('#menu li a').click(function(e){
-                        
-                        var hash = $(this).attr('href');
-                        var $toElement = $(hash);
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/menu.js"></script>
 
-                        $('.container').scrollTo($toElement, 2000, {axis: 'x'});
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.tabs.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.scrollTo.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.scroller.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.em.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jScrollPane.js"></script>
 
-                    });
+<?php if (is_home() || is_front_page()): ?>
+<script type="text/javascript">
+    $(function(){
+        $('#menu li a').not('#menu li ul li a').click(function(e){
+            e.preventDefault();
+            var hash = $(this).attr('href');
+            var $toElement = $(hash);
 
-                    $('#next_index a').live('click', function(e){
-                        e.preventDefault();
-                        $('.container').scrollTo('+=350px', 2000, {axis: 'x'});
-                    });
+            $('.container').scrollTo($toElement, 2000, {axis: 'x'});
 
-                    $('#prev_index a').live('click', function(e){
-                        e.preventDefault();
-                        $('.container').scrollTo('-=350px', 2000, {axis: 'x'});
-                    });
-		});
-	</script>
-        <?php else:  ?>
-        <script type="text/javascript">
-            $(function(){
-                $('.container').jScrollPane();
-            });
-	</script>
-        <?php endif; ?>
-        <script type="text/javascript">
-            $(function(){
-                $('#menu ul').prev('a').addClass('submenu');
-            });
-	</script>
+        });
 
-<?php } ?>
+        $('#next_index a').live('click', function(e){
+            e.preventDefault();
+            $('.container').scrollTo('+=350px', 2000, {axis: 'x'});
+        });
+
+        $('#prev_index a').live('click', function(e){
+            e.preventDefault();
+            $('.container').scrollTo('-=350px', 2000, {axis: 'x'});
+        });
+    });
+</script>
+<?php else:  ?>
+<script type="text/javascript">
+    $(function(){
+        $('.container').jScrollPane();
+    });
+</script>
+<?php endif; ?>
+<script type="text/javascript">
+    $(function(){
+        $('#menu ul').prev('a').addClass('submenu');
+    });
+</script>
 
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 
@@ -120,6 +111,8 @@ foreach ($options as $value) {
 
 <div id="header">
     <div id="header_box">
+        <?php if (is_home() || is_front_page()): ?>
+        
                 <?php
                 if(function_exists('wp_nav_menu')) {
                     wp_nav_menu(array(
@@ -130,5 +123,20 @@ foreach ($options as $value) {
                         'container' => ''
                 )); }
                 ?>
+
+        <?php else: ?>
+
+                <?php
+                if(function_exists('wp_nav_menu')) {
+                    wp_nav_menu(array(
+                        'theme_location' => 'inner-menu',
+                        'depth' => 2,
+                        'menu_id' => 'menu',
+                        'menu_class' => '',
+                        'container' => ''
+                )); }
+                ?>
+
+        <?php endif; ?>
     </div>
 </div>

@@ -103,9 +103,13 @@ blockquote, q {
 ----------------------------------------------------------------------------------------------------*/
 .container {
 	width: 923px;
-	height:380px;
-	margin:115px auto 0 auto;
+	height:350px;
+	margin:115px auto 0;
 	position:relative;
+        overflow: auto;
+}
+.container.page {
+	margin:0 auto;
 }
 
 /* Grid >> Global
@@ -213,6 +217,41 @@ blockquote, q {
 
 .clearfix {
 	display: block;
+}
+
+/* Custom WP CSS Styles
+-------------------------------------------------------------- */
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.alignleft {
+	float: left;
+        margin: 0 5px 5px 0;
+}
+.alignright {
+	float: right;
+        margin: 0 0 5px 5px;
+}
+.wp-caption {
+	background-color: #FFEFF9;
+	border: 1px solid #FFDFF2;
+	-khtml-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px; /* optional rounded corners for browsers that support it */
+	text-align: center;
+}
+.wp-caption img {
+	border: 0 none;
+	margin: 0;
+	padding: 0;
+}
+.wp-caption p.wp-caption-text {
+	font-size: 0.8em;
+	margin: 0;
+	padding: 3px;
 }
 
 
@@ -469,7 +508,7 @@ Styles for the arrows displayed at the bottom of each section
 p, h1, h2, h3, h4, h5, h6 {
 	margin-bottom:15px; /* Gives some space between paragraphs */
 	padding:0;
-	color:#555555;
+	color:#757474;
 }
 
 p {	/* Default font styles for paragraphs */
@@ -482,7 +521,7 @@ p {	/* Default font styles for paragraphs */
 /* Headings */
 
 h1, h2, h3, h4, h5, h6 {
-	font-family:Arial, Helvetica, sans-serif;
+	/*font-family:Arial, Helvetica, sans-serif;*/
 }
 h1 {
 	font-weight:bold;
@@ -529,7 +568,10 @@ a {
 	text-align:right;
 }
 
-
+.container.page h1, .container.page h2 {
+        color: #757474;
+        margin-bottom: 24px;
+}
 
 /*  _______________________________________
 
