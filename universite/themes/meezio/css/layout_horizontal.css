@@ -1,3 +1,5 @@
+/* @override http://universite.jvsoftware.com/wp-content/themes/meezio/css/layout_horizontal.css */
+
 /* @override http://localhost:8888/meezio/wp-content/themes/meezio/css/layout_horizontal.css */
 
 /* @override http://localhost:8888/meezio/wp-content/themes/meezio/css/layout_horizontal.css */
@@ -331,7 +333,7 @@ body {
 	margin:0;
 	padding:0;
 	overflow:hidden;
-	font-family:"Lucida Sans Unicode","Lucida Grande",Arial,Helvetica,sans-serif;
+	font-family:Helvetica,"Lucida Sans Unicode","Lucida Grande",Arial, sans-serif;
 	color:#999999;
         font-size: 14px;
 }
@@ -380,6 +382,7 @@ img {
 		position:relative;
 	}
 	
+	.content a{ color: #7cac1f; text-decoration:underline;}	
 
 
 /*  _______________________________________
@@ -439,14 +442,14 @@ img {
 			z-index:888;
 			padding-bottom:20px;
 		}
-		#menu li a:hover, #menu li a.active {
-			color:#2B2B2B;
+		#menu li a:hover, #menu li a.active, #menu li a.current,  #menu li.current-menu-ancestor a,  #menu li.current-menu-item a{
+			color:#6b9c2b;
 			background:url("../images/icons/menu_hover.png") no-repeat center 22px;
 		}
 		#menu li a.submenu {
 			background:url("../images/icons/submenu.png") no-repeat center 19px;
 		}
-		#menu .submenu:hover, #menu .submenu.active {
+		#menu .submenu:hover, #menu .submenu.active, #menu li.current-menu-ancestor a {
 			background:url("../images/icons/submenu_hover.png") no-repeat center 22px;
 		}
 
@@ -542,14 +545,37 @@ Styles for the arrows displayed at the bottom of each section
 			float:left;
 			margin-left:0px;
 			left:0;
-			background:url("../images/icons/previous_horizontal.png") no-repeat left bottom;
+			background:url("../images/icons/previous_horizontal_fade.png") no-repeat left bottom;
 		}
+                
+                .navigation-top .previous {
+                        background:url("../images/icons/previous_horizontal_fade.png") no-repeat center left;
+                }
+                .navigation-top .previous a:hover{
+                        background:none;
+                }
+                
+                .navigation-top .next {
+                        background:url("../images/icons/next_horizontal_fade.png") no-repeat left bottom;
+                }
+                .navigation-top .next {
+                        background:url("../images/icons/next_horizontal_fade.png") no-repeat center right;
+                }
+                .navigation-top .next a:hover{
+                        background:none;
+                }
 		.next {
 			float:right;
-			background:url("../images/icons/next_horizontal.png") no-repeat right bottom;
+			background:url("../images/icons/next_horizontal_fade.png") no-repeat right bottom;
 		}
 			.previous a:hover, .next a:hover {
 				text-decoration:none;
+			}
+                        .previous a:hover {
+				background:url("../images/icons/previous_horizontal.png") no-repeat right bottom;
+			}
+                        .next a:hover {
+				background:url("../images/icons/next_horizontal.png") no-repeat right bottom;
 			}
 		.previous span, .next span {
 			display:none;
