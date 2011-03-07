@@ -254,6 +254,65 @@ blockquote, q {
 	padding: 3px;
 }
 
+/* Button styles
+-------------------------------------------------------------- */
+.child-page-link {
+    float: left;
+    height: 30px;
+    margin: 0 15px 15px;
+    background: #abc001;
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        color-stop(0, rgb(174,193,1)),
+        color-stop(1, rgb(78,143,9))
+    );
+    background-image: -moz-linear-gradient(
+        left center,
+        rgb(174,193,1) 0%,
+        rgb(78,143,9) 100%
+    );
+    border: 3px solid #4F9207;
+    padding: 19px 3px 4px;
+    -khtml-border-radius: 22px;
+    -moz-border-radius: 22px;
+    -webkit-border-radius: 22px;
+    border-radius: 22px; /* optional rounded corners for browsers that support it */
+}
+
+#child-pages {
+    margin-top: 40px;
+}
+.child-page-link a{
+    padding: 15px;
+    height: 50px;
+    color: #ffffff;
+    font-family: Arial, Tahoma, sans-serif;
+    background: #91bc39;
+    -moz-text-shadow: 1px 1px 0px #4F9207;
+    -webkit-text-shadow: 1px 1px 0px #4F9207;
+    text-shadow: 1px 1px 0px #4F9207;
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        color-stop(0, rgb(214,224,73)),
+        color-stop(1, rgb(79,146,7))
+    );
+    background-image: -moz-linear-gradient(
+        left center,
+        rgb(214,224,73) 0%,
+        rgb(79,146,7) 100%
+    );
+    -khtml-border-radius: 17px;
+    -moz-border-radius: 17px;
+    -webkit-border-radius: 17px;
+    border-radius: 17px; /* optional rounded corners for browsers that support it */
+}
+.child-page-link a:hover{
+    text-decoration: none;
+}
 
 
 /*  _______________________________________
