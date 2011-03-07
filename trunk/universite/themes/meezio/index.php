@@ -11,6 +11,7 @@ get_header(); ?>
                 <?php $cnt = 0; ?>
                 <div class="container" style="overflow: hidden; height: 530px;">
                     <div class="content" style="width: 2100px; height: 530px;">
+                        
                     <?php
                     foreach($pages as $page) :
                         if ($page->post_parent == 0) :

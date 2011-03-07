@@ -23,7 +23,8 @@ foreach ($options as $value) {
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 
 <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
-
+<link rel="icon" href="<?php bloginfo('template_url'); ?>/images/favicon.ico" type="image/x-icon" /> 
+<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/images/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/layout_<?php echo $mzo_transition; ?>.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/fancybox.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" type="text/css" media="screen" />
@@ -56,8 +57,6 @@ foreach ($options as $value) {
 
 
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery-1.4.2.min.js"></script>
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/menu.js"></script>
-
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.tabs.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.scrollTo.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.scroller.js"></script>
@@ -66,8 +65,25 @@ foreach ($options as $value) {
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jScrollPane.js"></script>
 
 <?php if (is_home() || is_front_page()): ?>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/menu.js"></script>
 <script type="text/javascript">
     $(function(){
+        $('.navigation-top').find('#prev_index').mouseover(function(){
+            $(this).addClass('previous');
+        });
+        $('.navigation-top').find('#prev_index').mouseout(function(){
+            $(this).removeClass('previous');
+        });
+
+        $('.navigation-top').find('#next_index').mouseover(function(){
+            $(this).addClass('next');
+        });
+        $('.navigation-top').find('#next_index').mouseout(function(){
+            $(this).removeClass('next');
+        });
+        
+        $('.container').scrollTo($('#ambition'), 2000, {axis: 'x'});
+        
         $('#menu li a').not('#menu li ul li a').click(function(e){
             e.preventDefault();
             var hash = $(this).attr('href');
@@ -123,6 +139,10 @@ foreach ($options as $value) {
                         'container' => ''
                 )); }
                 ?>
+        <div class="navigation-top" style="clear: both; padding: 0 50px; position: absolute; top: 325px; width: 820px">
+            <h1 id="prev_index" style="float: left; width: 100px; height: 80px"><a style="float: left; width: 100px; height: 80px" href="#"></a></h1>
+            <h1 id="next_index" style="float: right; width: 100px; height: 80px"><a style="float: right; width: 100px; height: 80px" href="#"></a></h1>
+        </div> <!-- navigation -->
 
         <?php else: ?>
 
@@ -138,5 +158,6 @@ foreach ($options as $value) {
                 ?>
 
         <?php endif; ?>
+
     </div>
 </div>
