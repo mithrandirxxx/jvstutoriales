@@ -392,7 +392,7 @@ function get_child_pages(){
     global $post;
     $output = '';
     
-    $query = new WP_Query(array('post_parent' => $post->ID, 'post_type' => 'page', 'order' => 'DESC', 'orderby' => 'menu_item', 'posts_per_page' => -1));
+    $query = new WP_Query(array('post_parent' => $post->ID, 'post_type' => 'page', 'order' => 'ASC', 'orderby' => 'menu_order', 'posts_per_page' => -1));
     
     if ( $query->have_posts () ) {
         $cnt = 0;

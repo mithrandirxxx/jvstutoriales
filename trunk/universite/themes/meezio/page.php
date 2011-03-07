@@ -17,7 +17,7 @@ if (isset($_GET['ajax'])): ?>
                     <?php if ($index - 1 >= 0): ?>
                     <h1 id="prev_subpage" class="previous" style="margin-bottom: 0"><a href="#<?php echo $index - 1; ?>"></a></h1>
                     <?php endif; ?>
-                    <?php if ($index != sizeof($posts)): ?>
+                    <?php if ($index != sizeof($posts) || sizeof($posts) != 1): ?>
                     <h1 id="next_subpage" class="next" style="margin-bottom: 0"><a href="#<?php echo $index + 1; ?>"></a></h1>
                     <?php endif; ?>
                 </div>
