@@ -392,12 +392,23 @@ function get_child_pages(){
     global $post;
     $output = '';
     
-    $childrens = get_children(array('post_parent' => $post->ID, 'post_type' => 'page', 'post_status' => 'publish'));
+    $query = new WP_Query(array('post_parent' => $post->ID, 'post_type' => 'page', 'order' => 'DESC', 'orderby' => 'menu_item', 'posts_per_page' => -1));
     
-    if ($childrens) {
-        foreach ($childrens as $children) {
-            $output .= '<div class="child-page-link" id="child-page-' . $children->ID . '"><a class="fancybox" href="' . $children->guid . '&ajax=true">' . $children->post_title . '</a></div>';
-        }
+    if ( $query->have_posts () ) {
+        $cnt = 0;
+         while ( $query->have_posts() ) : $query->the_post();
+            if ($cnt == 6) {
+                $style = 'style="margin-left:0"';
+            } elseif ($cnt == 2) {
+                $style = 'style="margin-left:0; clear: both"';
+            } else {
+                $style = '';
+            }
+            
+            $output .= '<div class="child-page-link" ' . $style . ' id="child-page-' . get_the_ID() . '"><a class="fancybox" href="' . get_the_guid() . '&ajax=true">' . get_the_title() . '</a></div>';
+            $cnt++; $style = '';
+        endwhile;
+        
         return '<div id="child-pages">' . $output . '</div>';
     } else {
         return false;

@@ -6,14 +6,13 @@
 if (isset($_GET['ajax'])): ?>
 
     <h2 style="color: #6b9c2b; padding: 10px 10px 0"><?php echo $post->post_title; ?></h2>
-    <?php query_posts(array('post_parent' => $post->ID, 'post_type' => 'page', 'order' => 'ASC')); ?>
+    <?php query_posts(array('post_parent' => $post->ID, 'post_type' => 'page', 'order' => 'ASC', 'orderby' => 'menu_item')); ?>
     <?php $index = 0; ?>
     <div id="ajax-subpages" style="width: 750px; height: 295px; padding: 10px 10px 10px 0; overflow: hidden; position: relative; margin-left: 10px">
         <div class="subpages-area" style="width: 3750px; height: 300px; overflow: hidden">
             <?php if ( have_posts () ) : while ( have_posts() ) : the_post(); ?>
             <div id="<?php echo $index ?>" class="subpage-single" style="width: 750px; height: 300px; float: left; margin-right: 20px; position: relative">
                 <?php the_content(); ?>
-            
                 <div class="navigation-subpage" style="clear: both; width: 750px; position: absolute; bottom: 0">
                     <?php if ($index - 1 >= 0): ?>
                     <h1 id="prev_subpage" class="previous" style="margin-bottom: 0"><a href="#<?php echo $index - 1; ?>"></a></h1>
