@@ -106,7 +106,7 @@ blockquote, q {
 .container {
 	width: 923px;
 	height:350px;
-	margin:115px auto 0;
+	margin:0 auto;
 	position:relative;
         overflow: auto;
 }
@@ -254,6 +254,62 @@ blockquote, q {
 	font-size: 0.8em;
 	margin: 0;
 	padding: 3px;
+}
+/* Parcours unique
+-------------------------------------------------------------- */
+
+#parcours-map {
+    clear: both;
+}
+
+#parcours-map a{
+   float: left;
+   height: 178px;
+}
+
+#parcours-map .first{
+    width: 130px;
+    background: url('../images/site_1.png') center no-repeat;
+}
+
+#parcours-map .first:hover{
+    background: url('../images/site_1h.png') center no-repeat;
+}
+
+#parcours-map .second{
+    width: 289px;
+    background: url('../images/site_2.png') center no-repeat;
+}
+
+#parcours-map .second:hover{
+    background: url('../images/site_2h.png') center no-repeat;
+}
+
+#parcours-map .third{
+    width: 127px;
+    background: url('../images/site_3.png') center no-repeat;
+}
+
+#parcours-map .third:hover{
+    background: url('../images/site_3h.png') center no-repeat;
+}
+
+#parcours-map .fourth{
+    width: 151px;
+    background: url('../images/site_4.png') center no-repeat;
+}
+
+#parcours-map .fourth:hover{
+    background: url('../images/site_4h.png') center no-repeat;
+}
+
+#parcours-map .fifth{
+    width: 127px;
+    background: url('../images/site_5.png') center no-repeat;
+}
+
+#parcours-map .fifth:hover{
+    background: url('../images/site_5h.png') center no-repeat;
 }
 
 /* Button styles

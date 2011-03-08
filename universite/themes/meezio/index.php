@@ -9,7 +9,7 @@ get_header(); ?>
                 
 		<?php $pages = get_pages(array('sort_column' => 'menu_order', 'sort_order' => 'ASC'));?>
                 <?php $cnt = 0; ?>
-                <div class="container" style="overflow: hidden; height: 530px;">
+                <div class="container" style="overflow: hidden; height: 530px; margin: 115px auto 0">
                     <div class="content" style="width: 2100px; height: 530px;">
                         
                     <?php

@@ -418,4 +418,42 @@ function get_child_pages(){
  * Subpages shortcode
  */
 add_shortcode('subpages-links', 'get_child_pages');
+/**
+ * Add image map
+ */
+function add_image_map($atts, $content = null){
+
+    extract(shortcode_atts(array(
+        "href1" => '#',
+        "href2" => '#',
+        "href3" => '#',
+        "href4" => '#',
+        "href5" => '#'
+    ), $atts));
+    
+    $links .= '<div id="parcours-map">';
+    $links .= '<a class="first" href="' . $href1 . '"></a>';
+    $links .= '<a class="second" href="' . $href2 . '"></a>';
+    $links .= '<a class="third" href="' . $href3 . '"></a>';
+    $links .= '<a class="fourth" href="' . $href4 . '"></a>';
+    $links .= '<a class="fifth" href="' . $href5 . '"></a>';
+    $links .= '</div>';
+    
+    return $links;
+}
+/**
+ * Subpages shortcode
+ */
+add_shortcode('parcours-unique', 'add_image_map');
+/**
+ * Add sidebar
+ */
+register_sidebar(array(
+    'name'          => 'Sidebar 2',
+    'description'   => '',
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>',
+    'before_widget' => '<div class="widget">',
+    'after_widget'  => '</div>',
+));
 ?>
