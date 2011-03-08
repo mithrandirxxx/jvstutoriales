@@ -52,33 +52,40 @@ else:
     <div id="wrapper">
 
 
-        <div <?php post_class('container'); ?>>
-                <?php if ( have_posts () ) : ?>
+        <div <?php post_class('container'); ?> style="height: 500px">
+            <div class="inner-pages" style="width: 21000px; height: 500px">
+                <?php $name = $post->post_name; ?>
+                    <?php $pages = get_pages(array('sort_column' => 'menu_order', 'sort_order' => 'asc')); ?>
+                    <?php foreach ($pages as $page): ?>
+                    <?php $parent = get_page($page->post_parent); ?>
+                        <?php if ($parent->post_parent == 0): ?>
+                        <div id="<?php echo $page->post_name; ?>" class="single-page" style="width: 903px; height: 500px; position: relative; float: left; padding: 0 10px;">
+                            <img src="<?php echo get_first_image($parent); ?>" title="<?php echo $parent->post_title; ?>" alt="<?php echo $parent->post_title; ?>" />
+                            <h2><?php echo $page->post_title; ?></h2>
+                            <?php $content = wpautop($page->post_content); ?>
+                            <?php echo do_shortcode($content); ?>
+                            <div class="navigation" style="clear: both; width: 863px; position: absolute; bottom: 0; padding: 0 20px">
 
-                    <?php if (is_child(0)) : ?>
 
-                        <?php while ( have_posts() ) : the_post(); ?>
-                            <?php the_content(); ?>
-                        <?php endwhile; ?>
+                                <h1 id="prev" class="previous"><a href="#"></a></h1>
 
-                    <?php else: ?>
+                                <h1 id="next" class="next"><a href="#"></a></h1>
 
-                        <?php while ( have_posts() ) : the_post(); ?>
-                        <?php $parent_page = get_page($post->post_parent);?>
-                        <img src="<?php echo get_first_image($parent_page); ?>" title="<?php echo $parent_page->post_title; ?>" alt="<?php echo $parent_page->post_title; ?>" />
-                        <h2><?php the_title(); ?></h2>
-                        <?php the_content(); ?>
-                        <?php endwhile; ?>
 
-                    <?php endif; ?>
-
+                            </div> <!-- navigation -->
+                        </div>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
                     <div class="clear"></div>
-
-                <?php endif; ?>
+            </div>
           </div> <!-- container -->
 
-
+          
     </div> <!-- wrapper -->
-
+    <script type="text/javascript">
+        $(function(){
+            $('.container').scrollTo($('#<?php echo $name; ?>'), 1, {axis: 'x'});
+        });
+    </script>
     <?php get_footer(); ?>
 <?php endif; ?>

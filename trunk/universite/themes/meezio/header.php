@@ -108,6 +108,16 @@ foreach ($options as $value) {
 <script type="text/javascript">
     $(function(){
         $('.container').jScrollPane();
+
+        $('#next a').live('click', function(e){
+            e.preventDefault();
+            $('.container').scrollTo($(this).closest('.single-page').next('.single-page'), 2000, {axis: 'x'});
+        });
+
+        $('#prev a').live('click', function(e){
+            e.preventDefault();
+            $('.container').scrollTo($(this).closest('.single-page').prev('.single-page'), 2000, {axis: 'x'});
+        });
     });
 </script>
 <?php endif; ?>
