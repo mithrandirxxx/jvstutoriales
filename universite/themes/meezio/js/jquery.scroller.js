@@ -1,9 +1,10 @@
 $(document).ready(function() {
-	$('a.panel').click(function () {
+	$('a.panel').click(function (e) {
+                e.preventDefault();
 		$('a.panel').removeClass('selected');
 		$(this).addClass('selected');
 		current = $(this);
-		$('#wrapper').scrollTo($(this).attr('href'), 1200);		
+		$('#wrapper').scrollTo($(this).attr('href'), 2000);
 		return false;
 	});
 	$(window).resize(function () {

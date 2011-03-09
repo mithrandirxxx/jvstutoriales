@@ -82,7 +82,7 @@ foreach ($options as $value) {
             $(this).removeClass('next');
         });
         
-        $('.container').scrollTo($('#ambition'), 2000, {axis: 'x'});
+        $('.container').scrollTo($('#ambition'), 1, {axis: 'x'});
         
         $('#menu li a').not('#menu li ul li a').click(function(e){
             e.preventDefault();
@@ -108,16 +108,6 @@ foreach ($options as $value) {
 <script type="text/javascript">
     $(function(){
         $('.container').jScrollPane();
-
-        $('#next a').live('click', function(e){
-            e.preventDefault();
-            $('#wrapper').scrollTo('+=1680px', 2000, {axis: 'x'});
-        });
-
-        $('#prev a').live('click', function(e){
-            e.preventDefault();
-            $('#wrapper').scrollTo('-=1680px', 2000, {axis: 'x'});
-        });
     });
 </script>
 <?php endif; ?>
