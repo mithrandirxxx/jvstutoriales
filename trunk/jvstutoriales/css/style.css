@@ -1,0 +1,41 @@
+/* 
+    Document   : style
+    Created on : Jun 9, 2011, 12:26:23 PM
+    Author     : Javier Villanueva
+    Description:
+        Hoja de estilo para tutorial 9.
+*/
+
+body {
+    background: #7db9e8;
+    font-family: Arial, serif
+}
+
+#contenedor {
+    width: 400px;
+    margin: 100px auto 0
+}
+
+#contenedor h1 {
+    text-align: center
+}
+
+#visto {
+    margin-top: 20px
+}
+
+#views {
+    font-weight: bold;
+    -webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	-ms-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+    cursor: default
+}
+
+#views:hover {
+    -moz-transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+    color: red
+}
