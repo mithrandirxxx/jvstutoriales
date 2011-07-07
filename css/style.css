@@ -1,0 +1,35 @@
+/* 
+    Document   : style
+    Created on : Jun 17, 2011, 9:25:44 AM
+    Author     : Jahvi
+    Description:
+        Hoja de estilo para tutorial 10.
+*/
+
+body {
+    background: #7db9e8;
+    font-family: Arial, serif
+}
+
+#lista {
+    width: 400px;
+    margin: 40px auto
+}
+
+#lista li {
+    list-style: none;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    background: #D5E4EF;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    cursor: move;
+    border: 1px solid #6192B7
+}
+
+#lista .placeholder {
+    border: 1px dotted #6192B7;
+    background: #7db9e8;
+}
+
